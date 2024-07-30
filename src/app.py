@@ -1,9 +1,11 @@
 # flask-app.py
 from flask import Flask, request
 import json
+from flask_cors import CORS
 
 # create a Flask instance
 app = Flask(__name__)
+CORS(app)
 
 # a simple description of the API written in html.
 # Flask can print and return raw text to the browser. 
@@ -20,7 +22,7 @@ app = Flask(__name__)
 #                 </body>
 #                 """
 
-description = "Request Sussessful..."
+description = {"content":"Request Sussessful..."}
 
 
 # Routes refer to url'
@@ -58,3 +60,4 @@ if __name__ == "__main__":
 	
 	# for production
 	app.run(host='0.0.0.0', port=8080)
+ 
